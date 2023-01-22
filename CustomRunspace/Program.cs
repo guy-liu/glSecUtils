@@ -14,6 +14,7 @@ namespace CustomRunspace
         {
             if (args.Length == 0)
             {
+                //Console.WriteLine("CustomRunspace.exe \"$ExecutionContext.SessionState.LanguageMode | Out-File -FilePath C:\\Temp\\test.txt\"");
                 return;
             }
 
