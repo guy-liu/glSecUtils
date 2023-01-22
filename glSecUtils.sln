@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectDll", "InjectDll\InjectDll.csproj", "{6C4EECC6-7A71-445E-ADA0-1A715542F452}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomRunspace", "CustomRunspace\CustomRunspace.csproj", "{095BED1C-95CB-45CB-BC48-F5E444F005A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C4EECC6-7A71-445E-ADA0-1A715542F452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C4EECC6-7A71-445E-ADA0-1A715542F452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C4EECC6-7A71-445E-ADA0-1A715542F452}.Debug|x64.ActiveCfg = Debug|x64
+		{6C4EECC6-7A71-445E-ADA0-1A715542F452}.Debug|x64.Build.0 = Debug|x64
+		{6C4EECC6-7A71-445E-ADA0-1A715542F452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C4EECC6-7A71-445E-ADA0-1A715542F452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C4EECC6-7A71-445E-ADA0-1A715542F452}.Release|x64.ActiveCfg = Release|x64
+		{6C4EECC6-7A71-445E-ADA0-1A715542F452}.Release|x64.Build.0 = Release|x64
+		{095BED1C-95CB-45CB-BC48-F5E444F005A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{095BED1C-95CB-45CB-BC48-F5E444F005A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{095BED1C-95CB-45CB-BC48-F5E444F005A3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{095BED1C-95CB-45CB-BC48-F5E444F005A3}.Debug|x64.Build.0 = Debug|Any CPU
+		{095BED1C-95CB-45CB-BC48-F5E444F005A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{095BED1C-95CB-45CB-BC48-F5E444F005A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{095BED1C-95CB-45CB-BC48-F5E444F005A3}.Release|x64.ActiveCfg = Release|Any CPU
+		{095BED1C-95CB-45CB-BC48-F5E444F005A3}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C827FB6-1EE1-4AEF-81FD-D48F14A5B56C}
+	EndGlobalSection
+EndGlobal
