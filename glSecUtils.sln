@@ -1,13 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33122.133
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33214.272
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectDll", "InjectDll\InjectDll.csproj", "{6C4EECC6-7A71-445E-ADA0-1A715542F452}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomRunspace", "CustomRunspace\CustomRunspace.csproj", "{095BED1C-95CB-45CB-BC48-F5E444F005A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstallUtilExec", "InstallUtilExec\InstallUtilExec.csproj", "{CF2BDD72-C757-44D3-BD43-4DD03B78B8C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{64D3912A-8B30-4A1C-A676-58E7F97F44FD}"
+	ProjectSection(SolutionItems) = preProject
+		Utils\nc.exe = Utils\nc.exe
+		Utils\nc64.exe = Utils\nc64.exe
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDownloadCradle", "DotNetDownloadCradle\DotNetDownloadCradle.csproj", "{459ABB34-283D-4A5B-9A4A-F5D86018DA07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +49,14 @@ Global
 		{CF2BDD72-C757-44D3-BD43-4DD03B78B8C4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CF2BDD72-C757-44D3-BD43-4DD03B78B8C4}.Release|x64.ActiveCfg = Release|Any CPU
 		{CF2BDD72-C757-44D3-BD43-4DD03B78B8C4}.Release|x64.Build.0 = Release|Any CPU
+		{459ABB34-283D-4A5B-9A4A-F5D86018DA07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459ABB34-283D-4A5B-9A4A-F5D86018DA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459ABB34-283D-4A5B-9A4A-F5D86018DA07}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{459ABB34-283D-4A5B-9A4A-F5D86018DA07}.Debug|x64.Build.0 = Debug|Any CPU
+		{459ABB34-283D-4A5B-9A4A-F5D86018DA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459ABB34-283D-4A5B-9A4A-F5D86018DA07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{459ABB34-283D-4A5B-9A4A-F5D86018DA07}.Release|x64.ActiveCfg = Release|Any CPU
+		{459ABB34-283D-4A5B-9A4A-F5D86018DA07}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

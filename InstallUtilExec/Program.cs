@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Configuration.Install;
+using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,9 @@ namespace InstallUtilExec
      * 
      * Run Command
      * C:\Windows\Microsoft.NET\Framework64\v4.0.30319\installutil.exe /logfile= /LogToConsole=false /U /uninstall=1 /cmd="whoami /priv > c:\temp\test2.txt"  InstallUtilExec.exe
+     * 
+     * Spawn virtual interactive PowerShell
+     * C:\Windows\Microsoft.NET\Framework64\v4.0.30319\installutil.exe /logfile= /LogToConsole=false /U /uninstall=1 /interactive  InstallUtilExec.exe
      */
     [System.ComponentModel.RunInstaller(true)]
     public class InstallUtilExec : System.Configuration.Install.Installer
@@ -32,8 +36,11 @@ namespace InstallUtilExec
 
         static String powershellParameterName = "powershell";
         static String cmdExecutableParameterName = "cmd";
+        static String spawnInteractiveParameterName = "interactive";
+
         static String runOnInstallParameterName = "install";
         static String runOnUninstallParameterName = "uninstall";
+        
 
         String getContextParameter (String parameterName)
         {
@@ -77,6 +84,49 @@ namespace InstallUtilExec
             process.Start();
         }
 
+        void spawnInteractiveShell()
+        {
+            string command;
+
+            Runspace rs = RunspaceFactory.CreateRunspace();
+            rs.Open();
+
+            do
+            {
+                Console.Write("PS > ");
+                command = Console.ReadLine();
+
+                // vervbse check!
+                if (!string.IsNullOrEmpty(command))
+                {
+                    using (Pipeline pipeline = rs.CreatePipeline())
+                    {
+                        try
+                        {
+                            pipeline.Commands.AddScript(command);
+                            pipeline.Commands.Add("Out-String");
+
+                            // otherwise stay open and ready to accept and invoke commands
+                            Collection<PSObject> results = pipeline.Invoke();
+                            //var process = (Process)pipeline.Output.Read().BaseObject;
+
+                            StringBuilder stringBuilder = new StringBuilder();
+                            foreach (PSObject obj in results)
+                            {
+                                stringBuilder.AppendLine(obj.ToString());
+                            }
+                            Console.Write(stringBuilder.ToString());
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("{0}", ex.Message);
+                        }
+                    }
+                }
+            }
+            while (command != "exit");
+        }
+
         void performExecution()
         {
             // if (isDebug) Console.WriteLine("Perform Execution");
@@ -88,6 +138,10 @@ namespace InstallUtilExec
             else if (getContextParameter(cmdExecutableParameterName) != null)
             {
                 executeCommand();
+            }
+            else if(getContextParameter(spawnInteractiveParameterName) != null) 
+            {
+                spawnInteractiveShell();
             }
         }
 
