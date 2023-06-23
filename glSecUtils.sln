@@ -23,6 +23,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellcodeExec", "ShellcodeE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaeserLoadShell", "CaeserLoadShell\CaeserLoadShell.csproj", "{436EA24A-4814-40D8-99FE-60DBB9944481}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6FD872D7-447C-43F6-B92D-6B8F03708CE6}"
+	ProjectSection(SolutionItems) = preProject
+		SampleScripts\ShellcodeRunnerUsingDynamicLookup.ps1 = SampleScripts\ShellcodeRunnerUsingDynamicLookup.ps1
+		SampleScripts\WinExecUsingDynamicLookup.ps1 = SampleScripts\WinExecUsingDynamicLookup.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
